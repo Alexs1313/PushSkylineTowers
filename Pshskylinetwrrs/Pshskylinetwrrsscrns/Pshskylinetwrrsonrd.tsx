@@ -38,9 +38,9 @@ const pshskylinetwrrspages: {
     pshskylinetwrrsbackground: require('../../assets/i/pshskylinetwrrstonbg3.png'),
   },
   {
-    pshskylinetwrrstitle: `Learn & ${'\n'}Play`,
+    pshskylinetwrrstitle: `Learn & ${'\n'}Explore`,
     pshskylinetwrrsdescription:
-      'Read fascinating stories, generate facts, and test your knowledge in fun quizzes.',
+      'Read fascinating stories, generate facts, and test your knowledge with architecture quizzes.',
     pshskylinetwrrsbackground: require('../../assets/i/pshskylinetwrrstonbg4.png'),
   },
   {

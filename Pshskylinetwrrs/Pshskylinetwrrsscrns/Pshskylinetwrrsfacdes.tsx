@@ -954,7 +954,6 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   pshskylinetwrrshearticonsaved: {
-    tintColor: '#EF4444',
     opacity: 1,
   },
 });

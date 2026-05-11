@@ -171,7 +171,7 @@ const Pshskylinetwrrsfccts = () => {
   }, [pshskylinetwrrscurrentindex]);
 
   return (
-    <Pshskylinetwrrsclay biigctsandbyonndlayScroll={false} bounce={false}>
+    <Pshskylinetwrrsclay bounce={false}>
       <View style={styles.pshskylinetwrrscontainer}>
         <ScrollView
           showsVerticalScrollIndicator={false}
