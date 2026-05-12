@@ -222,7 +222,6 @@ const Pshskylinetwrrsquzz = () => {
               styles.pshskylinetwrrsscroll,
               {
                 paddingTop: pshskylinetwrrsinsets.top + 14,
-                paddingBottom: pshskylinetwrrsinsets.bottom + 100,
               },
             ]}>
             <Text style={styles.pshskylinetwrrstitle}>Facade Quiz</Text>
@@ -505,11 +504,7 @@ const Pshskylinetwrrsquzz = () => {
           </View>
         ) : null}
 
-        <View
-          style={[
-            styles.pshskylinetwrrsbottom,
-            {paddingBottom: Math.max(18, pshskylinetwrrsinsets.bottom + 56)},
-          ]}>
+        <View style={[styles.pshskylinetwrrsbottom]}>
           {pshskylinetwrrsphase === 'intro' ? (
             <Pressable
               onPress={pshskylinetwrrsstart}
@@ -574,6 +569,7 @@ const styles = StyleSheet.create({
   pshskylinetwrrsroot: {
     flex: 1,
     backgroundColor: '#060B1A',
+    paddingBottom: 100,
   },
   pshskylinetwrrsscroll: {
     paddingHorizontal: 18,
@@ -885,10 +881,6 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   pshskylinetwrrsbottom: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 10,
     paddingHorizontal: 18,
     paddingTop: 12,
   },

@@ -106,13 +106,11 @@ const Pshskylinetwrrsmap = () => {
                     pshskylinetwrrsitem.pshskylinetwrrsid,
                   );
                 }}>
-                <Image
-                  source={
-                    pshskylinetwrrsactive
-                      ? require('../../assets/i/pshskylinetwrrmarkact.png')
-                      : require('../../assets/i/pshskylinetwrrmark.png')
-                  }
-                />
+                {Platform.OS === 'android' ? null : (
+                  <Image
+                    source={require('../../assets/i/pshskylinetwrrmark.png')}
+                  />
+                )}
               </Marker>
             );
           })}

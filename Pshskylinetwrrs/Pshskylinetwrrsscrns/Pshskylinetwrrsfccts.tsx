@@ -303,7 +303,7 @@ const Pshskylinetwrrsfccts = () => {
         <View
           style={[
             styles.pshskylinetwrrsbottombar,
-            {paddingBottom: Math.max(18, pshskylinetwrrsinsets.bottom + 60)},
+            {paddingBottom: Math.max(18, pshskylinetwrrsinsets.bottom + 90)},
           ]}>
           <Pressable
             disabled={pshskylinetwrrsleft === 0 || pshskylinetwrrsbusy}
@@ -529,9 +529,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     paddingHorizontal: 18,
     paddingTop: 12,
-    backgroundColor: '#060B1A',
-    borderTopWidth: 1,
-    borderTopColor: '#FFFFFF0F',
   },
   pshskylinetwrrsprimarywrap: {
     borderRadius: 18,
