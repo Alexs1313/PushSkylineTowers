@@ -1,4 +1,4 @@
-package com.pushskylinetowers
+package com.the.skyline.towers
 
 import android.app.Application
 import com.facebook.react.PackageList

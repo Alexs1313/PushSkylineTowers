@@ -523,9 +523,7 @@ const Pshskylinetwrrsfacdes = () => {
           styles.pshskylinetwrrscontainer,
           {paddingTop: pshskylinetwrrsinsets.top + 14},
         ]}>
-        <ScrollView
-          contentContainerStyle={styles.pshskylinetwrrsscrollcontent}
-          showsVerticalScrollIndicator={false}>
+        <View style={styles.pshskylinetwrrsscrollcontent}>
           <View style={styles.pshskylinetwrrsheaderrow}>
             <View>
               <Text style={styles.pshskylinetwrrsgreeting}>
@@ -732,7 +730,7 @@ const Pshskylinetwrrsfacdes = () => {
               </Pressable>
             ))}
           </View>
-        </ScrollView>
+        </View>
       </View>
     </Pshskylinetwrrsclay>
   );
@@ -761,7 +759,6 @@ const styles = StyleSheet.create({
 
   pshskylinetwrrscontainer: {
     flex: 1,
-    backgroundColor: '#060B1A',
   },
   pshskylinetwrrsscrollcontent: {
     paddingHorizontal: 18,

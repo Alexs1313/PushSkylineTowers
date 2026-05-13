@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {ScrollView, StyleSheet, View} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 const Pshskylinetwrrsclay = ({
   children,
@@ -12,7 +13,11 @@ const Pshskylinetwrrsclay = ({
   bounce?: boolean;
 }) => {
   return (
-    <View style={styles.pshskylinetwrrsBackground}>
+    <LinearGradient
+      colors={['rgb(6, 69, 106)', 'rgb(6, 11, 28)']}
+      start={{x: 0, y: 0}}
+      end={{x: 0, y: 0.8}}
+      style={styles.pshskylinetwrrsBackground}>
       {pshskylinetwrrsScroll ? (
         <ScrollView
           bounces={bounce}
@@ -23,7 +28,7 @@ const Pshskylinetwrrsclay = ({
       ) : (
         <View style={styles.pshskylinetwrrsFill}>{children}</View>
       )}
-    </View>
+    </LinearGradient>
   );
 };
 

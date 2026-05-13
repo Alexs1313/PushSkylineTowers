@@ -1,4 +1,4 @@
-package com.pushskylinetowers
+package com.the.skyline.towers
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
