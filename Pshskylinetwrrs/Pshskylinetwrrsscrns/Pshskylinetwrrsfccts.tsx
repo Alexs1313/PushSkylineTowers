@@ -207,7 +207,7 @@ const Pshskylinetwrrsfccts = () => {
                 colors={
                   pshskylinetwrrsleft === 0
                     ? ['#DC2626', '#F87171']
-                    : ['#2563EB', '#06B6D4']
+                    : ['#2563EB', '#06B6D6']
                 }
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}

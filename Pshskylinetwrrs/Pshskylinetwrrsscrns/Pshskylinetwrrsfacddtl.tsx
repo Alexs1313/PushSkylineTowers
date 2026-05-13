@@ -102,6 +102,18 @@ const Pshskylinetwrrsfacddtl = () => {
     pshskylinetwrrssavebusy,
   ]);
 
+  const pshskylinetwrrsopengdirections = useCallback(() => {
+    if (!pshskylinetwrrsitem?.pshskylinetwrrsid) {
+      return;
+    }
+    (pshskylinetwrrsnavigation as any).navigate('Pshskylinetwrrstaabs', {
+      screen: 'Pshskylinetwrrsmap',
+      params: {
+        pshskylinetwrrsfocusid: pshskylinetwrrsitem.pshskylinetwrrsid,
+      },
+    });
+  }, [pshskylinetwrrsnavigation, pshskylinetwrrsitem]);
+
   const pshskylinetwrrshandleshare = useCallback(async () => {
     if (!pshskylinetwrrsitem) {
       return;
@@ -271,7 +283,9 @@ const Pshskylinetwrrsfacddtl = () => {
           </View>
 
           <View style={styles.pshskylinetwrrsbottomrow}>
-            <Pressable style={styles.pshskylinetwrrssecondarybutton}>
+            <Pressable
+              onPress={pshskylinetwrrsopengdirections}
+              style={styles.pshskylinetwrrssecondarybutton}>
               <Image
                 source={require('../../assets/i/pshskylinetwrrstlocdet.png')}
               />

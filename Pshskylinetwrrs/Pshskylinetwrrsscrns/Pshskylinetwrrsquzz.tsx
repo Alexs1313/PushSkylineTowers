@@ -277,7 +277,7 @@ const Pshskylinetwrrsquzz = () => {
               styles.pshskylinetwrrsscroll,
               {
                 paddingTop: pshskylinetwrrsinsets.top + 10,
-                paddingBottom: pshskylinetwrrsinsets.bottom + 120,
+                paddingBottom: pshskylinetwrrsinsets.bottom + 10,
               },
             ]}>
             <View style={styles.pshskylinetwrrsheaderrow}>

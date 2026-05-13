@@ -2,7 +2,11 @@
 import Pshskylinetwrrsclay from '../Pshskylinetwrrscpnts/Pshskylinetwrrsclay';
 import {pshskylinetwrrsallfacades} from '../Pshskylinetwrrsdata/pshskylinetwrrsfacdata';
 
-import {useFocusEffect, useNavigation} from '@react-navigation/native';
+import {
+  useFocusEffect,
+  useNavigation,
+  useRoute,
+} from '@react-navigation/native';
 
 import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {Image, Platform, Pressable, StyleSheet, Text, View} from 'react-native';
@@ -12,11 +16,13 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const Pshskylinetwrrsmap = () => {
   const pshskylinetwrrsnavigation = useNavigation();
+  const pshskylinetwrrsroute = useRoute();
   const pshskylinetwrrsinsets = useSafeAreaInsets();
   const [pshskylinetwrrsselectedid, pshskylinetwrrssetselectedid] = useState<
     string | null
   >(null);
   const pshskylinetwrrsmarkertapref = useRef(false);
+  const pshskylinetwrrsmapref = useRef<MapView | null>(null);
 
   const pshskylinetwrrsselected = useMemo(() => {
     if (!pshskylinetwrrsselectedid) {
@@ -39,12 +45,45 @@ const Pshskylinetwrrsmap = () => {
     [],
   );
 
+  const pshskylinetwrrsrouteparamsref = useRef(pshskylinetwrrsroute.params);
+  pshskylinetwrrsrouteparamsref.current = pshskylinetwrrsroute.params;
+
   useFocusEffect(
     useCallback(() => {
+      const pshskylinetwrrsfocusid = (pshskylinetwrrsrouteparamsref.current as any)
+        ?.pshskylinetwrrsfocusid as string | undefined;
+      if (pshskylinetwrrsfocusid) {
+        pshskylinetwrrssetselectedid(pshskylinetwrrsfocusid);
+        const pshskylinetwrrsitem = pshskylinetwrrsallfacades.find(
+          i => i.pshskylinetwrrsid === pshskylinetwrrsfocusid,
+        );
+        if (pshskylinetwrrsitem) {
+          requestAnimationFrame(() => {
+            pshskylinetwrrsmapref.current?.animateToRegion(
+              {
+                latitude:
+                  pshskylinetwrrsitem.pshskylinetwrrscoordinates
+                    .pshskylinetwrrslat,
+                longitude:
+                  pshskylinetwrrsitem.pshskylinetwrrscoordinates
+                    .pshskylinetwrrslng,
+                latitudeDelta: 1.2,
+                longitudeDelta: 1.2,
+              },
+              450,
+            );
+          });
+        }
+        requestAnimationFrame(() => {
+          (pshskylinetwrrsnavigation as any).setParams?.({
+            pshskylinetwrrsfocusid: undefined,
+          });
+        });
+      }
       return () => {
         pshskylinetwrrssetselectedid(null);
       };
-    }, []),
+    }, [pshskylinetwrrsnavigation]),
   );
 
   const pshskylinetwrrsopendetails = () => {
@@ -73,6 +112,7 @@ const Pshskylinetwrrsmap = () => {
         </View>
 
         <MapView
+          ref={pshskylinetwrrsmapref}
           provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
           userInterfaceStyle="dark"
           style={styles.pshskylinetwrrsmap}
