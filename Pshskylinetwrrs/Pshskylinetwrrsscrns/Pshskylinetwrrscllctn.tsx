@@ -367,7 +367,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 14,
     fontWeight: '700',
-    marginBottom: 2,
+    marginBottom: 3,
   },
   pshskylinetwrrscardsubtitle: {
     color: '#FFFFFF80',
